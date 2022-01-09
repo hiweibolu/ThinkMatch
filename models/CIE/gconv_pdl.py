@@ -56,7 +56,7 @@ class Gconv(nn.Layer):
         x = paddle.bmm(A, F.relu(ax)) + F.relu(ux) # has size (bs, N, num_outputs)
         return x
 
-class Siamese_ChannelIndependentConv(nn.Module):
+class Siamese_ChannelIndependentConv(nn.Layer):
     r"""
     Siamese Channel Independent Conv neural network for processing arbitrary number of graphs.
 
