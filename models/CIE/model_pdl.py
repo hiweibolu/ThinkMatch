@@ -118,12 +118,12 @@ class Net(CNN):
 
 
         P_src_dis = (P_src.unsqueeze(1) - P_src.unsqueeze(2))
-        P_src_dis = torch.norm(P_src_dis, p=2, dim=3).detach()
+        P_src_dis = paddle.norm(P_src_dis, p=2, dim=3).detach()
         P_tgt_dis = (P_tgt.unsqueeze(1) - P_tgt.unsqueeze(2))
-        P_tgt_dis = torch.norm(P_tgt_dis, p=2, dim=3).detach()
+        P_tgt_dis = paddle.norm(P_tgt_dis, p=2, dim=3).detach()
 
-        Q_src = torch.exp(-P_src_dis / self.rescale[0])
-        Q_tgt = torch.exp(-P_tgt_dis / self.rescale[0])
+        Q_src = paddle.exp(-P_src_dis / self.rescale[0])
+        Q_tgt = paddle.exp(-P_tgt_dis / self.rescale[0])
 
         emb_edge1 = Q_src.unsqueeze(-1)
         emb_edge2 = Q_tgt.unsqueeze(-1)
