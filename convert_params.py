@@ -72,7 +72,7 @@ def vgg_convert():
     with fluid.dygraph.guard():
         model_th = models.vgg16_bn(pretrained=True)
         model_pd = vision.models.vgg16(pretrained=False, batch_norm=True)
-        model_path = "./vgg16_bn"
+        model_path = "./src/utils_pdl/vgg16_bn"
         print(model_th.state_dict().keys())
         print(len(model_th.state_dict().keys()))
         print(model_pd.state_dict().keys())
