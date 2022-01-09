@@ -9,7 +9,7 @@ from src.lap_solvers.hungarian import hungarian
 
 from src.utils.config import cfg
 
-from src.backbone import *
+from src.utils.backbone import *
 CNN = eval(cfg.BACKBONE)
 
 
