@@ -143,6 +143,7 @@ class Net(CNN):
         A_tgt = paddle.bmm(G_tgt, H_tgt.transpose((0,2,1)))
 
         emb1, emb2 = paddle.concat((U_src, F_src), axis=1).transpose((0,2,1)), paddle.concat((U_tgt, F_tgt), axis=1).transpose((0,2,1))
+        ss = []
 
         for i in range(self.gnn_layer):
             #gnn_layer = getattr(self, 'gnn_layer_{}'.format(i))
