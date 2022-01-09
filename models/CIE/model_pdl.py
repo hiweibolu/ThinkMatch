@@ -160,13 +160,14 @@ class Net(CNN):
             ss.append(s)
 
             if i == self.gnn_layer - 2:
-                cross_graph = getattr(self, 'cross_graph_{}'.format(i))
                 '''
+                cross_graph = getattr(self, 'cross_graph_{}'.format(i))
                 new_emb1 = cross_graph(torch.cat((emb1, torch.bmm(s, emb2)), dim=-1))
                 new_emb2 = cross_graph(torch.cat((emb2, torch.bmm(s.transpose(1, 2), emb1)), dim=-1))
                 emb1 = new_emb1
                 emb2 = new_emb2
                 '''
+                cross_graph = self.cross_layer
                 emb1_new = self.cross_layer(paddle.concat((emb1, paddle.bmm(s, emb2)), axis=-1))
                 emb2_new = self.cross_layer(paddle.concat((emb2, paddle.bmm(s.transpose((0,2,1)), emb1)), axis=-1))
                 emb1 = emb1_new
