@@ -21,19 +21,13 @@ GPUS:
   - 0
   #- 1
 
-# Problem configuration
-PROBLEM:
-  TYPE: 2GM
+# Pairwise data configuration
+PAIR:
   RESCALE:  # rescaled image size
     - 256
     - 256
-  FILTER: 'intersection'
-
-# Graph construction settings
-GRAPH:
-  SRC_GRAPH_CONSTRUCT: tri
-  TGT_GRAPH_CONSTRUCT: tri
-  SYM_ADJACENCY: True
+  GT_GRAPH_CONSTRUCT: tri
+  REF_GRAPH_CONSTRUCT: tri
 
 # Training settings
 TRAIN:
