@@ -46,7 +46,7 @@ class Net(CNN):
                 # only second last layer will have cross-graph module
                 self.cross_layer = (nn.Linear(cfg.CIE.GNN_FEAT * 2, cfg.CIE.GNN_FEAT))
 
-        self.rescale = cfg.PROBLEM.RESCALE
+        self.rescale = cfg.PAIR.RESCALE
 
     def forward(self, src, tgt, P_src, P_tgt, G_src, G_tgt, H_src, H_tgt, ns_src, ns_tgt, K_G, K_H, type='img'): #
         '''

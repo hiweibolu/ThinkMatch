@@ -29,7 +29,7 @@ class Net(CNN):
             if i == self.gnn_layer - 2:  # only second last layer will have cross-graph module
                 self.add_module('cross_graph_{}'.format(i), nn.Linear(cfg.CIE.GNN_FEAT * 2, cfg.CIE.GNN_FEAT))
                 self.add_module('cross_graph_edge_{}'.format(i), nn.Linear(cfg.CIE.GNN_FEAT * 2, cfg.CIE.GNN_FEAT))
-        self.rescale = cfg.PROBLEM.RESCALE
+        self.rescale = cfg.PAIR.RESCALE
 
     def forward(self, data_dict, **kwargs):
         if 'images' in data_dict:

@@ -29,14 +29,6 @@ PAIR:
   GT_GRAPH_CONSTRUCT: tri
   REF_GRAPH_CONSTRUCT: tri
 
-# Problem configuration
-PROBLEM:
-  TYPE: 2GM
-  RESCALE:  # rescaled image size
-    - 256
-    - 256
-  FILTER: 'intersection'
-
 # Training settings
 TRAIN:
   # start, end epochs
